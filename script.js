@@ -1,0 +1,274 @@
+//1.a.print odd numbers
+//anonyomus function&&IIFE
+
+var arr = [12,13,14,15,17,19,21]
+var result =[];
+var odd = function(arr){
+     for(var i=0;i<arr.length;i++){
+        if(arr[i]%2!=0){
+           result.push(arr[i]);
+        }
+    }
+    return result;
+}
+
+console.log(odd(arr));
+
+//IIFE
+( function odd(arr){
+    var result =[];
+          for(var i=0;i<arr.length;i++){
+              if(arr[i]%2!=0){
+                 result.push(arr[i]);
+              }
+          }
+        console.log (result);
+      }
+     )([12,13,14,15,17,19,21])
+
+   //  b.convert all string to title case
+   //  anonymous function
+
+     var arr = "guvi geek".split(" ");
+var result =[];
+var odd = function(arr){
+     for (var i=0;i<arr.length;i++){
+           result.push(arr[i]);
+      }
+      var m=result.map( k=> k[0].toUpperCase() + k.substring(1).toLowerCase())
+   .join(" ");
+    return m;
+}
+ console.log(odd(arr));
+
+// IIFE function
+( function odd(arr){
+    var b=arr.split(" ");
+    var result =[];
+       for (var i=0;i<b.length;i++){
+             result.push(b[i]);
+        }
+        var m=result.map( k=> k[0].toUpperCase() + k.substring(1).toLowerCase())
+     .join(" ");
+     console.log(m);
+  }
+   )("guvi geek")
+
+//c.Sum of all numbers in an array
+//anonymous function
+var arr = [12,13,14,15,16];
+var sum=0;
+var odd = function(arr){
+     for (var i=0;i<arr.length;i++){
+     sum=sum+arr[i];
+     }return sum
+}
+ console.log(odd(arr));
+
+ //IIFE function
+ (function odd(arr){
+    var sum=0;
+       for (var i=0;i<arr.length;i++){
+       sum=sum+arr[i];
+       }console.log(sum);
+  }
+  )
+   ([12,13,14,15,16]);
+
+   //d.Return all the prime numbers in an array
+   //anonymous function
+   var a=[2,3,4,5,6,7,8,9,10];
+var noob=function(a){
+var b=a.filter((ele)=>{
+for(var i=2;i<ele;i++){
+  if (ele%i===0)
+    return false
+}
+    return true
+  })
+  return b
+}
+console.log(noob(a))
+
+//IIFE function
+( function noob(a){
+  var b=a.filter((ele)=>{
+  for(var i=2;i<ele;i++){
+    if (ele%i===0)
+      return false
+  }
+      return true
+    })
+   console.log(b)
+  }
+  )([2,3,4,5,6,7,8,9,10])
+
+  // e.Return all the palindromes in an array
+  // anonymous function
+   var a=["malayalam","dog","dad","moskov"];
+var k=[];
+var noob=function(a){
+for (var i=0;i<a.length;i++){
+  var b=a[i].split("").reverse().join("");
+if (a[i]==b){
+ k.push(a[i]);
+}
+}return k;
+}
+console.log(noob(a));
+
+//IIFE function:
+(function noob(a){
+    var k=[];
+  for (var i=0;i<a.length;i++){
+    
+    var b=a[i].split("").reverse().join("");
+  if (a[i]==b){
+   k.push(a[i]);
+  }
+  }console.log(k)
+  })
+  (["malayalam","dog","dad","moskov"])
+
+  //f.Return median of two sorted arrays of the same size.
+  //anonymous function
+  var m=[5,3,4,2,1]
+ var n=[8,7,9,6,10]
+ var arr=m.concat(n)
+var a= arr.sort(function(a,b){return a-b });
+var noob=function(a){
+   if (a.length%2===0){
+     var b=a.length/2;
+     var c=b-1;
+     var d=(a[b]+a[c])/2;
+   } else if (a.length%2!=0){
+     var e=a.length/2;
+     var f=Math.floor(e);
+     var d=(a[f])/2;
+   }return d
+}
+   console.log(noob(a));
+
+   //IIFE FUNCTION
+   (function noob(m,n){
+    var arr=m.concat(n)
+   var a= arr.sort(function(a,b){return a-b });
+      if (a.length%2===0){
+        var b=a.length/2;
+        var c=b-1;
+        var d=(a[b]+a[c])/2;
+      } else if (a.length%2!=0){
+        var e=a.length/2;
+        var f=Math.floor(e);
+        var d=(a[f])/2;
+      }
+      console.log(d);
+   }
+   )([5,3,4,2,1],[8,7,9,6,10])
+   
+  //g.Remove duplicates from an array
+ // anonymous function
+  var a=[2,3,4,5,4,6,4,3,2,8,5]
+var b=[]
+var noob=function(a){
+for (var i=0;i<a.length;i++){
+  if (!b.includes(a[i])){
+  b.push(a[i])
+}
+}
+return b
+}
+console.log(noob(a))
+
+//IIFE function
+(function noob (a){
+  var b=[]
+for (var i=0;i<a.length;i++){
+  if (!b.includes(a[i])){
+  b.push(a[i])
+}
+}
+console.log(b)
+}
+)([2,3,4,5,4,6,4,3,2,8,5])
+
+//h.rotate an array by k times
+//anonymous function
+var a=[1,2,3,4,5]
+var k=7
+var noob=function(a,k){
+for (var i=0;i<k;i++){
+ a.unshift(a.pop())
+}
+return a
+}
+console.log(noob(a,k))
+
+//IIFE function
+(function noob(a,k){
+  for (var i=0;i<k;i++){
+   a.unshift(a.pop())
+  }
+  console.log(a)
+  }
+  )([1,2,3,4,5],7)
+
+//2.a.print odd numbers
+var odd = (arr)=>{
+  var result =[];
+      for(var i=0;i<arr.length;i++){
+        if(arr[i]%2!=0){
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+
+console.log(odd([12,13,14,15,17,19,21]));
+
+//b.convert all string to title case
+var odd =(arr)=>{
+  var b=arr.split(" ")
+  var result =[];
+      for (var i=0;i<b.length;i++){
+            result.push(b[i]);
+      }
+      var m=result.map( k=> k[0].toUpperCase() + k.substring(1).toLowerCase())
+    .join(" ");
+    return m;
+}
+  console.log(odd("guvi geek"));
+
+//c.Sum of all numbers in an array
+var odd = (arr)=>{
+  var sum=0;
+      for (var i=0;i<arr.length;i++){
+      sum=sum+arr[i];
+      }return sum
+}
+  console.log(odd([12,13,14,15,16]));
+
+//d.Return all the prime numbers in an array
+var noob=(a)=>{
+  var b=a.filter((ele)=>{
+  for(var i=2;i<ele;i++){
+    if (ele%i===0)
+      return false
+  }
+      return true
+    })
+    return b
+  }
+  console.log(noob([2,3,4,5,6,7,8,9,10]))
+
+//e.Return all the palindromes in an array
+var noob=(a)=>{
+  var k=[];
+for (var i=0;i<a.length;i++){
+  var b=a[i].split("").reverse().join("");
+if (a[i]==b){
+  k.push(a[i]);
+}
+}return k;
+}
+console.log(noob(["malayalam","dog","dad","moskov"]));
